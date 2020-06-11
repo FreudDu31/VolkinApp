@@ -76,11 +76,11 @@
     <Compile Include="CustomTextbox.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="frmPrincipal.vb">
+    <Compile Include="frmMain.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPrincipal.Designer.vb">
-      <DependentUpon>frmPrincipal.vb</DependentUpon>
+    <Compile Include="frmMain.Designer.vb">
+      <DependentUpon>frmMain.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmTool.Designer.vb">
@@ -89,6 +89,7 @@
     <Compile Include="frmTool.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="KeyBinding.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -104,10 +105,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="ucCompteur.Designer.vb">
-      <DependentUpon>ucCompteur.vb</DependentUpon>
+    <Compile Include="ucCount.Designer.vb">
+      <DependentUpon>ucCount.vb</DependentUpon>
     </Compile>
-    <Compile Include="ucCompteur.vb">
+    <Compile Include="ucCount.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ucSummonType.Designer.vb">
@@ -118,8 +119,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmPrincipal.resx">
-      <DependentUpon>frmPrincipal.vb</DependentUpon>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTool.resx">
       <DependentUpon>frmTool.vb</DependentUpon>
@@ -130,8 +131,8 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucCompteur.resx">
-      <DependentUpon>ucCompteur.vb</DependentUpon>
+    <EmbeddedResource Include="ucCount.resx">
+      <DependentUpon>ucCount.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucSummonType.resx">
       <DependentUpon>ucSummonType.vb</DependentUpon>

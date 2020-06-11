@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class frmPrincipal
+Partial Class frmMain
     Inherits System.Windows.Forms.Form
 
     'Form remplace la méthode Dispose pour nettoyer la liste des composants.
@@ -23,11 +23,15 @@ Partial Class frmPrincipal
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrincipal))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.picFont = New System.Windows.Forms.PictureBox()
         Me.picTool = New System.Windows.Forms.PictureBox()
         Me.pnlMiddle = New System.Windows.Forms.Panel()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.menuHideOptions = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuHideRates = New System.Windows.Forms.ToolStripMenuItem()
         Me.pnlOption = New System.Windows.Forms.Panel()
+        Me.chkKeyBinding = New System.Windows.Forms.CheckBox()
         Me.picMinus = New System.Windows.Forms.PictureBox()
         Me.picPlus = New System.Windows.Forms.PictureBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
@@ -36,16 +40,13 @@ Partial Class frmPrincipal
         Me.ucSummonScroll = New WindowsApp1.ucSummonType()
         Me.ucSummonFactionScroll = New WindowsApp1.ucSummonType()
         Me.ucSummonDiamond = New WindowsApp1.ucSummonType()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.menuHideOptions = New System.Windows.Forms.ToolStripMenuItem()
-        Me.menuHideRates = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.picFont, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picTool, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStrip1.SuspendLayout()
         Me.pnlOption.SuspendLayout()
         CType(Me.picMinus, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picPlus, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlRates.SuspendLayout()
-        Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'picFont
@@ -80,9 +81,28 @@ Partial Class frmPrincipal
         Me.pnlMiddle.Size = New System.Drawing.Size(388, 664)
         Me.pnlMiddle.TabIndex = 5
         '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuHideOptions, Me.menuHideRates})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(143, 48)
+        '
+        'menuHideOptions
+        '
+        Me.menuHideOptions.Name = "menuHideOptions"
+        Me.menuHideOptions.Size = New System.Drawing.Size(142, 22)
+        Me.menuHideOptions.Text = "Hide options"
+        '
+        'menuHideRates
+        '
+        Me.menuHideRates.Name = "menuHideRates"
+        Me.menuHideRates.Size = New System.Drawing.Size(142, 22)
+        Me.menuHideRates.Text = "Hide rates"
+        '
         'pnlOption
         '
         Me.pnlOption.BackColor = System.Drawing.Color.Transparent
+        Me.pnlOption.Controls.Add(Me.chkKeyBinding)
         Me.pnlOption.Controls.Add(Me.picMinus)
         Me.pnlOption.Controls.Add(Me.picPlus)
         Me.pnlOption.Controls.Add(Me.picFont)
@@ -92,6 +112,18 @@ Partial Class frmPrincipal
         Me.pnlOption.Name = "pnlOption"
         Me.pnlOption.Size = New System.Drawing.Size(388, 38)
         Me.pnlOption.TabIndex = 0
+        '
+        'chkKeyBinding
+        '
+        Me.chkKeyBinding.AutoSize = True
+        Me.chkKeyBinding.Location = New System.Drawing.Point(123, 3)
+        Me.chkKeyBinding.Name = "chkKeyBinding"
+        Me.chkKeyBinding.Size = New System.Drawing.Size(79, 17)
+        Me.chkKeyBinding.TabIndex = 6
+        Me.chkKeyBinding.Text = "KeyBinding"
+        Me.ToolTip1.SetToolTip(Me.chkKeyBinding, "Key binding are NumPad0 to NumPad9 from top to buttom" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "You can Ctrl+NumPad to cou" &
+        "nt down")
+        Me.chkKeyBinding.UseVisualStyleBackColor = True
         '
         'picMinus
         '
@@ -164,25 +196,7 @@ Partial Class frmPrincipal
         Me.ucSummonDiamond.Size = New System.Drawing.Size(194, 85)
         Me.ucSummonDiamond.TabIndex = 3
         '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuHideOptions, Me.menuHideRates})
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(143, 48)
-        '
-        'menuHideOptions
-        '
-        Me.menuHideOptions.Name = "menuHideOptions"
-        Me.menuHideOptions.Size = New System.Drawing.Size(142, 22)
-        Me.menuHideOptions.Text = "Hide options"
-        '
-        'menuHideRates
-        '
-        Me.menuHideRates.Name = "menuHideRates"
-        Me.menuHideRates.Size = New System.Drawing.Size(142, 22)
-        Me.menuHideRates.Text = "Hide rates"
-        '
-        'frmPrincipal
+        'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -192,16 +206,16 @@ Partial Class frmPrincipal
         Me.Controls.Add(Me.pnlRates)
         Me.Controls.Add(Me.pnlOption)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "frmPrincipal"
+        Me.Name = "frmMain"
         Me.Text = "VolkinApp"
         CType(Me.picFont, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picTool, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.pnlOption.ResumeLayout(False)
         Me.pnlOption.PerformLayout()
         CType(Me.picMinus, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picPlus, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlRates.ResumeLayout(False)
-        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -220,4 +234,5 @@ Partial Class frmPrincipal
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents menuHideOptions As ToolStripMenuItem
     Friend WithEvents menuHideRates As ToolStripMenuItem
+    Friend WithEvents chkKeyBinding As CheckBox
 End Class

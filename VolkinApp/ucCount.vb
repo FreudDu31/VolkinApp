@@ -1,6 +1,6 @@
 ﻿Imports System.IO
 
-Public Class ucCompteur
+Public Class ucCount
     Public iCompteur As Integer
     Public Sub New(ByVal iCompteur As Integer)
 
@@ -11,7 +11,7 @@ Public Class ucCompteur
         Me.iCompteur = iCompteur
     End Sub
 
-    Public Event DeleteCounter(ByVal uc As ucCompteur)
+    Public Event DeleteCounter(ByVal uc As ucCount)
     Public Event EventUpDown(ByVal bUp As Boolean)
 
     Private Sub ucCompteur_Load(sender As Object, e As EventArgs) Handles MyBase.Load
