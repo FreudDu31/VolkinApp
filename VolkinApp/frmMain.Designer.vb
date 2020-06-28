@@ -26,7 +26,7 @@ Partial Class frmMain
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.picFont = New System.Windows.Forms.PictureBox()
         Me.picTool = New System.Windows.Forms.PictureBox()
-        Me.pnlMiddle = New System.Windows.Forms.Panel()
+        Me.pnlMiddle = New System.Windows.Forms.FlowLayoutPanel()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.menuHideOptions = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuHideRates = New System.Windows.Forms.ToolStripMenuItem()
@@ -35,11 +35,13 @@ Partial Class frmMain
         Me.picMinus = New System.Windows.Forms.PictureBox()
         Me.picPlus = New System.Windows.Forms.PictureBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.pnlRates = New System.Windows.Forms.Panel()
+        Me.pnlRates = New System.Windows.Forms.FlowLayoutPanel()
+        Me.UcSummonPurpleFragment = New WindowsApp1.ucSummonType()
         Me.ucSummonFriendship = New WindowsApp1.ucSummonType()
+        Me.ucSummonDiamond = New WindowsApp1.ucSummonType()
         Me.ucSummonScroll = New WindowsApp1.ucSummonType()
         Me.ucSummonFactionScroll = New WindowsApp1.ucSummonType()
-        Me.ucSummonDiamond = New WindowsApp1.ucSummonType()
+        Me.UcSummonStargaze = New WindowsApp1.ucSummonType()
         CType(Me.picFont, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picTool, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -74,11 +76,10 @@ Partial Class frmMain
         'pnlMiddle
         '
         Me.pnlMiddle.BackColor = System.Drawing.Color.Transparent
-        Me.pnlMiddle.ContextMenuStrip = Me.ContextMenuStrip1
         Me.pnlMiddle.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pnlMiddle.Location = New System.Drawing.Point(0, 208)
+        Me.pnlMiddle.Location = New System.Drawing.Point(0, 188)
         Me.pnlMiddle.Name = "pnlMiddle"
-        Me.pnlMiddle.Size = New System.Drawing.Size(388, 664)
+        Me.pnlMiddle.Size = New System.Drawing.Size(388, 684)
         Me.pnlMiddle.TabIndex = 5
         '
         'ContextMenuStrip1
@@ -150,51 +151,77 @@ Partial Class frmMain
         'pnlRates
         '
         Me.pnlRates.BackColor = System.Drawing.Color.Transparent
+        Me.pnlRates.Controls.Add(Me.UcSummonPurpleFragment)
         Me.pnlRates.Controls.Add(Me.ucSummonFriendship)
+        Me.pnlRates.Controls.Add(Me.ucSummonDiamond)
         Me.pnlRates.Controls.Add(Me.ucSummonScroll)
         Me.pnlRates.Controls.Add(Me.ucSummonFactionScroll)
-        Me.pnlRates.Controls.Add(Me.ucSummonDiamond)
+        Me.pnlRates.Controls.Add(Me.UcSummonStargaze)
         Me.pnlRates.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlRates.Location = New System.Drawing.Point(0, 38)
         Me.pnlRates.Name = "pnlRates"
-        Me.pnlRates.Size = New System.Drawing.Size(388, 170)
+        Me.pnlRates.Size = New System.Drawing.Size(388, 150)
         Me.pnlRates.TabIndex = 0
+        '
+        'UcSummonPurpleFragment
+        '
+        Me.UcSummonPurpleFragment._Type = WindowsApp1.ucSummonType.eType.purpleFragment
+        Me.UcSummonPurpleFragment.BackColor = System.Drawing.Color.Transparent
+        Me.UcSummonPurpleFragment.Checked = False
+        Me.UcSummonPurpleFragment.Location = New System.Drawing.Point(3, 3)
+        Me.UcSummonPurpleFragment.Name = "UcSummonPurpleFragment"
+        Me.UcSummonPurpleFragment.Size = New System.Drawing.Size(44, 70)
+        Me.UcSummonPurpleFragment.TabIndex = 5
         '
         'ucSummonFriendship
         '
         Me.ucSummonFriendship._Type = WindowsApp1.ucSummonType.eType.friendship
         Me.ucSummonFriendship.BackColor = System.Drawing.Color.Transparent
-        Me.ucSummonFriendship.Location = New System.Drawing.Point(0, 0)
+        Me.ucSummonFriendship.Checked = False
+        Me.ucSummonFriendship.Location = New System.Drawing.Point(53, 3)
         Me.ucSummonFriendship.Name = "ucSummonFriendship"
-        Me.ucSummonFriendship.Size = New System.Drawing.Size(194, 85)
+        Me.ucSummonFriendship.Size = New System.Drawing.Size(161, 70)
         Me.ucSummonFriendship.TabIndex = 0
+        '
+        'ucSummonDiamond
+        '
+        Me.ucSummonDiamond._Type = WindowsApp1.ucSummonType.eType.diamond
+        Me.ucSummonDiamond.BackColor = System.Drawing.Color.Transparent
+        Me.ucSummonDiamond.Checked = False
+        Me.ucSummonDiamond.Location = New System.Drawing.Point(220, 3)
+        Me.ucSummonDiamond.Name = "ucSummonDiamond"
+        Me.ucSummonDiamond.Size = New System.Drawing.Size(161, 70)
+        Me.ucSummonDiamond.TabIndex = 3
         '
         'ucSummonScroll
         '
         Me.ucSummonScroll._Type = WindowsApp1.ucSummonType.eType.scroll
         Me.ucSummonScroll.BackColor = System.Drawing.Color.Transparent
-        Me.ucSummonScroll.Location = New System.Drawing.Point(194, 0)
+        Me.ucSummonScroll.Checked = False
+        Me.ucSummonScroll.Location = New System.Drawing.Point(3, 79)
         Me.ucSummonScroll.Name = "ucSummonScroll"
-        Me.ucSummonScroll.Size = New System.Drawing.Size(194, 85)
+        Me.ucSummonScroll.Size = New System.Drawing.Size(120, 70)
         Me.ucSummonScroll.TabIndex = 1
         '
         'ucSummonFactionScroll
         '
         Me.ucSummonFactionScroll._Type = WindowsApp1.ucSummonType.eType.factionScroll
         Me.ucSummonFactionScroll.BackColor = System.Drawing.Color.Transparent
-        Me.ucSummonFactionScroll.Location = New System.Drawing.Point(3, 85)
+        Me.ucSummonFactionScroll.Checked = False
+        Me.ucSummonFactionScroll.Location = New System.Drawing.Point(129, 79)
         Me.ucSummonFactionScroll.Name = "ucSummonFactionScroll"
-        Me.ucSummonFactionScroll.Size = New System.Drawing.Size(194, 85)
+        Me.ucSummonFactionScroll.Size = New System.Drawing.Size(120, 70)
         Me.ucSummonFactionScroll.TabIndex = 2
         '
-        'ucSummonDiamond
+        'UcSummonStargaze
         '
-        Me.ucSummonDiamond._Type = WindowsApp1.ucSummonType.eType.diamond
-        Me.ucSummonDiamond.BackColor = System.Drawing.Color.Transparent
-        Me.ucSummonDiamond.Location = New System.Drawing.Point(194, 85)
-        Me.ucSummonDiamond.Name = "ucSummonDiamond"
-        Me.ucSummonDiamond.Size = New System.Drawing.Size(194, 85)
-        Me.ucSummonDiamond.TabIndex = 3
+        Me.UcSummonStargaze._Type = WindowsApp1.ucSummonType.eType.stargaze
+        Me.UcSummonStargaze.BackColor = System.Drawing.Color.Transparent
+        Me.UcSummonStargaze.Checked = False
+        Me.UcSummonStargaze.Location = New System.Drawing.Point(255, 79)
+        Me.UcSummonStargaze.Name = "UcSummonStargaze"
+        Me.UcSummonStargaze.Size = New System.Drawing.Size(120, 70)
+        Me.UcSummonStargaze.TabIndex = 4
         '
         'frmMain
         '
@@ -221,12 +248,12 @@ Partial Class frmMain
     End Sub
     Friend WithEvents picFont As PictureBox
     Friend WithEvents picTool As PictureBox
-    Friend WithEvents pnlMiddle As Panel
+    Friend WithEvents pnlMiddle As FlowLayoutPanel
     Friend WithEvents pnlOption As Panel
     Friend WithEvents picMinus As PictureBox
     Friend WithEvents picPlus As PictureBox
     Friend WithEvents ToolTip1 As ToolTip
-    Friend WithEvents pnlRates As Panel
+    Friend WithEvents pnlRates As FlowLayoutPanel
     Friend WithEvents ucSummonFriendship As ucSummonType
     Friend WithEvents ucSummonScroll As ucSummonType
     Friend WithEvents ucSummonDiamond As ucSummonType
@@ -235,4 +262,6 @@ Partial Class frmMain
     Friend WithEvents menuHideOptions As ToolStripMenuItem
     Friend WithEvents menuHideRates As ToolStripMenuItem
     Friend WithEvents chkKeyBinding As CheckBox
+    Friend WithEvents UcSummonPurpleFragment As ucSummonType
+    Friend WithEvents UcSummonStargaze As ucSummonType
 End Class

@@ -21,11 +21,19 @@ Public Class frmMain
         fd.Color = My.Settings.color
         chkKeyBinding.Checked = My.Settings.KeyBinding
         SetBackground(My.Settings.BackGround)
-        listU.Add(ucSummonFriendship)
-        listU.Add(ucSummonScroll)
-        listU.Add(ucSummonFactionScroll)
-        listU.Add(ucSummonDiamond)
+        AddSummonToList(ucSummonFriendship)
+        AddSummonToList(ucSummonScroll)
+        AddSummonToList(ucSummonFactionScroll)
+        AddSummonToList(ucSummonDiamond)
+        AddSummonToList(UcSummonStargaze)
+        AddSummonToList(UcSummonPurpleFragment)
+        ucSummonFriendship.Checked = True
         ApplyFont()
+    End Sub
+
+    Private Sub AddSummonToList(u As ucSummonType)
+        listU.Add(u)
+        AddHandler u.TypeCheckedChanged, AddressOf UncheckAllTheOther
     End Sub
 
     Private Sub Form1_FormClosing(ByVal sender As System.Object,
@@ -100,7 +108,7 @@ Public Class frmMain
     End Sub
 
     Private Sub u_EventUpDown(bUp As Boolean)
-        Dim x = listU.First(Function(a) a.radType.Checked)
+        Dim x = listU.First(Function(a) a.Checked)
         If bUp Then
             x.AddOnePurple()
         Else
@@ -123,36 +131,10 @@ Public Class frmMain
         End If
     End Sub
 
-    Private Sub ucSummonScroll_radTypeCheckedChanged() Handles ucSummonScroll.radTypeCheckedChanged
-        If ucSummonScroll.radType.Checked = True Then
-            ucSummonFriendship.radType.Checked = False
-            ucSummonFactionScroll.radType.Checked = False
-            ucSummonDiamond.radType.Checked = False
-        End If
-    End Sub
-
-    Private Sub ucSummonFriendship_radTypeCheckedChanged() Handles ucSummonFriendship.radTypeCheckedChanged
-        If ucSummonFriendship.radType.Checked = True Then
-            ucSummonScroll.radType.Checked = False
-            ucSummonFactionScroll.radType.Checked = False
-            ucSummonDiamond.radType.Checked = False
-        End If
-    End Sub
-
-    Private Sub ucSummonFactionScroll_radTypeCheckedChanged() Handles ucSummonFactionScroll.radTypeCheckedChanged
-        If ucSummonFactionScroll.radType.Checked = True Then
-            ucSummonFriendship.radType.Checked = False
-            ucSummonScroll.radType.Checked = False
-            ucSummonDiamond.radType.Checked = False
-        End If
-    End Sub
-
-    Private Sub ucSummonDiamond_radTypeCheckedChanged() Handles ucSummonDiamond.radTypeCheckedChanged
-        If ucSummonDiamond.radType.Checked = True Then
-            ucSummonFriendship.radType.Checked = False
-            ucSummonFactionScroll.radType.Checked = False
-            ucSummonScroll.radType.Checked = False
-        End If
+    Private Sub UncheckAllTheOther(ByVal e As ucSummonType.eType)
+        For Each u In listU.Where(Function(a) a._Type <> e).ToList
+            u.Checked = False
+        Next
     End Sub
 
     Private Sub menuHideOptions_Click(sender As Object, e As EventArgs) Handles menuHideOptions.Click

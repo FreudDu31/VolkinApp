@@ -18,10 +18,6 @@ Public Class ucCount
 
     End Sub
 
-    Private Sub lblObjectif_Click(sender As Object, e As EventArgs) Handles lblObjectif.Click
-
-    End Sub
-
     Private Sub lblObjectif_MouseClick(sender As Object, e As MouseEventArgs) Handles lblObjectif.MouseClick
         If e.Button = MouseButtons.Right Then
             If lblObjectif.Text <> "∞" Then
